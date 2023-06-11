@@ -10,10 +10,16 @@ public class Conversion {
     public static void main(String[] args) {
         System.out.print("Enter the temperature in degrees Celsius: ");
         Scanner sc = new Scanner(System.in);
-        double temperatureCelsius = sc.nextDouble();
 
-        System.out.println("Temperatere F is equal: " + new CelsiusToFahrenheit().converter(temperatureCelsius));
-        System.out.println("Temperatere K is equal: " + new CelsiusToKelvin().converter(temperatureCelsius));
+        try {
+            double temperatureCelsius = sc.nextDouble();
+            System.out.println("Temperatere F is equal: " + new CelsiusToFahrenheit().converter(temperatureCelsius));
+            System.out.println("Temperatere K is equal: " + new CelsiusToKelvin().converter(temperatureCelsius));
+        }catch (Exception e){
+            System.out.println("Invalid temperature value. Enter a number.");
+
+        }
+        sc.close();
 
     }
 }
